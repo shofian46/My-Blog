@@ -35,4 +35,36 @@ class PostController extends Controller
             "posts" => $posts
         ]);
     }
+
+    public function fetchLike(Request $request)
+    {
+        $posts = Post::find($request->post);
+
+        return response()->json(['post' => $posts]);
+    }
+
+    public function handleLike(Request $request)
+    {
+        $posts = Post::find($request->post);
+        $posts->increment('like');
+        $posts->save();
+
+        return response()->json(['message' => 'Liked']);
+    }
+
+    public function fetchDislike(Request $request)
+    {
+        $post = Post::find($request->post);
+
+        return response()->json(['post' => $post]);
+    }
+
+    public function handleDislike(Request $request)
+    {
+        $post = Post::find($request->post);
+        $post->increment('dislike');
+        $post->save();
+
+        return response()->json(['message' => 'Disliked']);
+    }
 }

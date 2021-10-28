@@ -18,3 +18,39 @@
     border-radius: 0;
     margin-bottom: -1px;
 }
+
+.btn-read-more {
+    background-color: #2d46b9;
+    color: #fff;
+    border-radius: 50px;
+    font-family: Assistant;
+    font-weight: normal;
+    font-size: 12px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.btn-read-more:hover {
+    color: #fff;
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-box-shadow: 0 7px 0 -2px #f50909, 0 15px 0 -4px #f2f2f2, 0 10px 10px -3px #f50909;
+    box-shadow: 0 7px 0 -2px #f50909, 0 15px 0 -4px #f2f2f2, 0 10px 10px -3px #f50909;
+}
+
+.btn-regis-or-login {
+    background-color: #f2f2f2;
+    color: #c3c3c3;
+    font-size: 12px;
+    border-radius: 20px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.btn-regis-or-login:hover {
+    color: #071c4d;
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    -webkit-box-shadow: 0 7px 0 -2px #f50909, 0 15px 0 -4px #f2f2f2, 0 10px 10px -3px #f50909;
+    box-shadow: 0 7px 0 -2px #f50909, 0 15px 0 -4px #f2f2f2, 0 10px 10px -3px #f50909;
+}

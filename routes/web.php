@@ -79,6 +79,10 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+Route::post('/like', [PostController::class, 'fetchLike']);
+Route::post('/like/{id}', [PostController::class, 'handleLike']);

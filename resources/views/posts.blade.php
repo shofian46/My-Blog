@@ -39,7 +39,30 @@
 
           <p class="card-text">{{ $posts[0]->excerpt }}</p>
 
-          <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
+          <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-read-more">Read Me</a>
+            <div class="d-inline-flex position-static px-0 py-0">
+                @auth
+                    <div class="row justify-content-end">
+                        <div class="col-lg-5">
+                            <form action="/posts{{ $posts[0]->slug }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn border-0 rounded-circle text-muted d-inline-flex justify-content-center" name="like"><i class="far fa-heart"></i><p class="d-inline px-2" style="font-size: 12px">1</p></button>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="/posts{{ $posts[0]->slug }}) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" class="btn border-0 rounded-circle text-muted d-inline-flex" name="comment"><i class="far fa-comment"></i><p class="px-2 d-inline" style="font-size: 12px">1</p></button>
+                            </form>
+                        </div>
+                    </div>
+                @endauth
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-regis-or-login btn-block mt-3 py-2 mx-md-1">Login / Register To Join</a>
+                @endguest
+            </div>
         </div>
     </div>
 
@@ -65,7 +88,28 @@
                             </small>
                         </p>
                         <p class="card-text">{{ $post->excerpt }}</p>
-                        <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                        <a href="/posts/{{ $post->slug }}" class="btn btn-read-more">Read Me</a>
+                        <div class="d-inline-flex position-static px-0 py-0">
+                            @auth
+                                <div class="row justify-content-end">
+                                    <div class="col-lg-5">
+                                        <form action="/posts/create{{ $post->slug }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn border-0 rounded-circle text-muted d-inline-flex justify-content-center"><i class="far fa-heart"></i><p class="px-2 d-inline" style="font-size: 12px">1</p></button>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <form action="/posts/create{{ $post->slug }}) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn border-0 rounded-circle text-muted d-inline-flex"><i class="far fa-comment"></i><p class="px-2 d-inline-block" style="font-size: 12px">1</p></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            @endauth
+                            @guest
+
+                            @endguest
+                        </div>
                         </div>
                     </div>
                 </div>
