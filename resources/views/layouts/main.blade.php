@@ -14,6 +14,8 @@
    <!-- My Style-->
    <link href="{{ url('css/main.css') }}" rel="stylesheet" type="text/css">
 
+   <script src="{{ asset('js/app.js') }}" defer></script>
+
     <title>SAF Blog | {{ $title }}</title>
 </head>
 <body>

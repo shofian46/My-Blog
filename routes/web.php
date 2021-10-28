@@ -86,3 +86,6 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 
 Route::post('/like', [PostController::class, 'fetchLike']);
 Route::post('/like/{id}', [PostController::class, 'handleLike']);
+
+Route::post('/dislike', [PostController::class, 'fetchDislike']);
+Route::post('/dislike/{id}', [PostController::class, 'handleDislike']);

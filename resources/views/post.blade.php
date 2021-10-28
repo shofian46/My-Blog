@@ -23,6 +23,8 @@
                     </article>
 
                 <a href="/posts" class="text-decoration-none d-block mt-3">Back to Posts</a>
+                <like-component :Post="{{ $posts->slug }}"></like-component>
+                <dislike-component :Post="{{ $posts->slug}}"></dislike-component>
                 </div>
             </div>
         </div>

@@ -38,14 +38,14 @@ class PostController extends Controller
 
     public function fetchLike(Request $request)
     {
-        $posts = Post::find($request->post);
+        $posts = Post::find($request->posts);
 
-        return response()->json(['post' => $posts]);
+        return response()->json(['posts' => $posts]);
     }
 
     public function handleLike(Request $request)
     {
-        $posts = Post::find($request->post);
+        $posts = Post::find($request->posts);
         $posts->increment('like');
         $posts->save();
 
@@ -54,16 +54,16 @@ class PostController extends Controller
 
     public function fetchDislike(Request $request)
     {
-        $post = Post::find($request->post);
+        $posts = Post::find($request->posts);
 
-        return response()->json(['post' => $post]);
+        return response()->json(['posts' => $posts]);
     }
 
     public function handleDislike(Request $request)
     {
-        $post = Post::find($request->post);
-        $post->increment('dislike');
-        $post->save();
+        $posts = Post::find($request->posts);
+        $posts->increment('dislike');
+        $posts->save();
 
         return response()->json(['message' => 'Disliked']);
     }
